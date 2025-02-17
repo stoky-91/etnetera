@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.1'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'cz.eg.hr'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.6.3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.4.2'
+    runtimeOnly 'com.h2database:h2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation group: 'com.h2database', name: 'h2', version: '2.3.232'
+    testImplementation group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.11.4'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.36'
+    implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.6.3'
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+}
+
+test {
+    useJUnitPlatform {}
+}
